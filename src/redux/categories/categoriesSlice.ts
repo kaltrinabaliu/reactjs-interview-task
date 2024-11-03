@@ -15,6 +15,11 @@ const initialState: CategoriesState = {
   error: null,
 };
 
+interface CreateNotePayload {
+  categoryId: number;
+  note: NotesDto;
+}
+
 export const fetchAllCategories = createAsyncThunk(
   "category",
   async () => {
@@ -31,11 +36,12 @@ export const GetCategoryById = createAsyncThunk(
   }
 );
 
-export const CreateNote  = createAsyncThunk(
-  "note",
-  async (note: NotesDto) => {
+export const CreateNote = createAsyncThunk<CreateNotePayload, CreateNotePayload>(
+  "category/note",
+  async ({ categoryId, note }: CreateNotePayload) => {
     const createNoteUseCase = createNote();
-    return await createNoteUseCase.execute(note);
+    await createNoteUseCase.execute(categoryId, note);
+    return { categoryId, note }; 
   }
 );
 
@@ -60,7 +66,16 @@ const categoriesSlice = createSlice({
       .addCase(fetchAllCategories.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Failed to fetch categories.";
-      });
+      })
+
+      .addCase(CreateNote.fulfilled, (state, action) => {
+        const { categoryId, note } = action.payload;
+        const category = state.categories.find((c) => c.id === categoryId);
+        if (category) {
+          category.notes = category.notes || []; 
+          category.notes.push(note);
+        }
+      })
   },
 });
 

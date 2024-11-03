@@ -66,4 +66,17 @@ export class ApiClient implements IApiClient {
     );
     return response.data;
   }
+  async patch<T>(
+    url: string,
+    data: string | object,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
+    const response: AxiosResponse<T> = await this.axiosInstance.patch(
+      url,
+      data,
+      config
+    );
+    return response.data;
+  }
 }
+

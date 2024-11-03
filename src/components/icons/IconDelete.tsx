@@ -22,7 +22,6 @@ const IconDelete = () => {
           </clipPath>
         </defs>
       </svg>
-      ;
     </div>
   );
 };

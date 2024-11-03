@@ -24,9 +24,9 @@ export class CategoriesService implements ICategoriesService {
           }
   }
 
-  async createNote(note: NotesDto): Promise<void> {
+  async createNote(categoryId: number, note: NotesDto): Promise<void> {
       try {
-        await this.categoriesRepository.createNote(note);
+        await this.categoriesRepository.createNote(categoryId, note);
         } catch (error) {
           console.error("Failed to create note:", error);
           throw new Error("Could not create note.");

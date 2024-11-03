@@ -19,11 +19,11 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   iconRight,
 }) => {
   return (
-    <div className="w-full relative">
+    <div className="w-1/2 relative">
       <button
         onClick={click}
         style={{ backgroundColor: bgColor, width: widthsize }}
-        className={`flex items-center justify-center text-white px-4 py-2 rounded `}
+        className={`flex items-center justify-center text-white whitespace-nowrap px-4 py-2 rounded `}
       >
         {iconLeft && <span className="mr-2">{iconLeft}</span>}
         {label}
