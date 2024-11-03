@@ -1,7 +1,7 @@
 {
   "category": [
     {
-      "id": "1",
+      "id": 1,
       "notes": [
         {
           "id": 1,
@@ -18,24 +18,10 @@
           "title": "New Note",
           "description": "New Description"
         }
-      ],
-      "title": "sdef",
-      "description": "def"
+      ]
     },
     {
-      "id": "2",
-      "notes": [
-        {
-          "id": 1,
-          "title": "Title 1",
-          "description": "Description 1"
-        }
-      ],
-      "title": "swd",
-      "description": "sd"
-    },
-    {
-      "id": "3",
+      "id": 2,
       "notes": [
         {
           "id": 1,
@@ -45,7 +31,17 @@
       ]
     },
     {
-      "id": "4",
+      "id": 3,
+      "notes": [
+        {
+          "id": 1,
+          "title": "Title 1",
+          "description": "Description 1"
+        }
+      ]
+    },
+    {
+      "id": 4,
       "notes": [
         {
           "id": 1,

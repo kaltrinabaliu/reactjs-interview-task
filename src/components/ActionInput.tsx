@@ -26,7 +26,7 @@ const ActionInput: React.FC<ActionInputProps> = ({
   onChange,
 }) => {
   return (
-    <div className="relative bg-white w-1/2">
+    <div className="relative bg-white w-full">
       {iconLeft && (
         <span className="absolute left-0 top-1/2 transform -translate-y-1/2 pl-2">
           {iconLeft}

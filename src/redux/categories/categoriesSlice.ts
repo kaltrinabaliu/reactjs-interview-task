@@ -15,7 +15,7 @@ const initialState: CategoriesState = {
   error: null,
 };
 
-interface CreateNotePayload {
+export interface CreateNotePayload {
   categoryId: number;
   note: NotesDto;
 }

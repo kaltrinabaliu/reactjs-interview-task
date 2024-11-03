@@ -20,6 +20,7 @@ export class CategoriesRepository implements ICategoriesRepository {
   }
 
   async createNote(categoryId: number, note: NotesDto): Promise<void> {
-        this.apiClient.patch(`/category/${categoryId}`, note);
+    await this.apiClient.post(`/category/${categoryId}/notes`, note);
   }
+  
 }
