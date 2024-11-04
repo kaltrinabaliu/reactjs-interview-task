@@ -8,6 +8,7 @@ interface ActionButtonProps {
   hoverBgColor?: string;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
+  textColor?: string;
 }
 
 const ActionButton: React.FC<ActionButtonProps> = ({
@@ -17,17 +18,20 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   widthsize,
   iconLeft,
   iconRight,
+  textColor,
 }) => {
   return (
     <div className="w-full relative">
       <button
         onClick={click}
-        style={{ backgroundColor: bgColor, width: widthsize }}
-        className={`flex items-center justify-around text-white whitespace-nowrap w-full p-2 rounded text-[14px]`}
+        style={{ backgroundColor: bgColor, width: widthsize, color: textColor }}
+        className={`flex items-center justify-between text-white whitespace-nowrap px-3 py-2 w-full rounded text-[14px]`}
       >
-        {iconLeft && <span className="mr-2">{iconLeft}</span>}
-        {label}
-        {iconRight && <span className="ml-2">{iconRight}</span>}
+        <div className="flex items-center">
+          {iconLeft && <span className="text-current mr-2">{iconLeft}</span>}
+          {label && <span>{label}</span>}
+        </div>
+        {iconRight && <span className="text-current mr-2">{iconRight}</span>}
       </button>
     </div>
   );

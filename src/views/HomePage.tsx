@@ -128,7 +128,10 @@ const HomePage: React.FC = () => {
               iconRight={<IconArrowDown />}
               iconLeft={<IconCategory />}
               bgColor={
-                selectedCategoryId === category.id ? "#0A4A76" : "#1264A3"
+                selectedCategoryId === category.id ? "#F8F8FA" : "#1264A3"
+              }
+              textColor={
+                selectedCategoryId === category.id ? "#323338" : "#FFFFFF"
               }
             />
           ))
