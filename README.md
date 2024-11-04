@@ -1,50 +1,52 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is built using React, TypeScript, and Vite to create a responsive, modern web application. The application is supported by a JSON Server as a mock backend.
+git clone https://github.com/kaltrinabaliu/reactjs-interview-task.git
+cd reactjs-interview-task
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Run the server side: Ensure json-server is installed globally or locally in your project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+json-server --watch db.json
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To run this app
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+npm i
+
+npm run dev
+
+
+
+
+To make the React + TypeScript + Vite app more secure:
+
+Sanitize Input: Prevent XSS by sanitizing and validating all user input.
+
+Authentication/Authorization: Use JWT for authentication and role-based access control.
+
+Secure API Endpoints: Use HTTPS, add rate-limiting, and configure CORS to only allow trusted domains.
+
+Security Headers: Use libraries like helmet to set HTTP security headers.
+
+
+
+
+To scale the app for millions of records:
+
+Database: Use scalable databases (e.g., PostgreSQL, MongoDB) with indexing and sharding.
+
+Pagination: Implement pagination or infinite scrolling.
+
+Caching: Use in-memory caches like Redis.
+
+Load Balancing: Distribute traffic with load balancers and auto-scaling infrastructure.
+
+Data Transfer: Optimize APIs (GraphQL or lightweight REST) and compress responses.
+
+Asynchronous Tasks: Offload heavy tasks to background workers.
+
+Microservices & CDN: Use microservices and CDNs for efficient asset delivery.
