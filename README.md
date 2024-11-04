@@ -20,6 +20,10 @@ npm i
 npm run dev
 
 
+To test 
+
+npm test
+
 
 
 To make the React + TypeScript + Vite app more secure:
