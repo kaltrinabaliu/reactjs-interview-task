@@ -1,17 +1,26 @@
 # React + TypeScript + Vite
+
 This project is built using React, TypeScript, and Vite to create a responsive, modern web application. The application is supported by a JSON Server as a mock backend.
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/kaltrinabaliu/reactjs-interview-task.git
+cd reactjs-interview-task
+
+
 
 Run the server side: Ensure json-server is installed globally or locally in your project.
 
 json-server --watch db.json
+
+
+
 
 To run this app
 
 npm i
 
 npm run dev
+
+
+
 
 How might you make this app more secure?
 To enhance the security of this app, consider the following strategies:
@@ -30,15 +39,11 @@ Add rate-limiting and IP whitelisting to prevent DDoS (Distributed Denial-of-Ser
 CORS Configuration:
 
 Configure CORS (Cross-Origin Resource Sharing) rules properly to limit which domains can access the backend server.
-Environment Variables:
-
-Store sensitive data like API keys in environment variables instead of hard-coding them into the source code.
-Content Security Policy (CSP):
-
-Implement CSP headers to restrict which sources the app can load content from, minimizing the risk of malicious code execution.
-Security Headers:
 
 Use tools like helmet (for Node.js) to set various HTTP headers to help protect the app (e.g., X-Content-Type-Options, X-Frame-Options).
+
+
+
 How would you make this solution scale to millions of records?
 To handle scaling efficiently, consider these architectural and code optimization techniques:
 
@@ -49,8 +54,6 @@ Implement database sharding and indexing for faster querying.
 Use pagination or infinite scrolling to avoid loading all records at once.
 Caching Strategies:
 
-Implement caching with tools like Redis or Memcached to reduce the load on the database and serve frequent requests faster.
-Use browser caching where applicable to minimize server load.
 Backend Improvements:
 
 Introduce load balancing to distribute traffic across multiple servers.
@@ -63,10 +66,6 @@ Asynchronous Processing:
 
 Offload heavy operations to background workers or task queues (e.g., Bull, RabbitMQ, or Celery) to keep the app responsive.
 Microservices Architecture:
-
-Split the app into smaller, modular services that can be independently scaled and deployed.
-Utilize containerization (e.g., Docker, Kubernetes) for seamless scaling and management.
-Front-end Performance:
 
 Use techniques like code splitting and lazy loading to improve initial load times.
 Optimize asset delivery through CDNs (Content Delivery Networks).
